@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" type="text/css" href="dependency.css">
+</head>
+<body>
+  <script src="./d3.v3.min.js"></script>
+  <script src="./dependencyData.js"></script>
+
+  <form id="form">
+    <label><input type="range" name="circle_size" min="1" max="50" value="30"/> オブジェクトの大きさ</label><br>
+    <label><input type="range" name="charge_multiplier" min="1" max="500" value="300"/> オブジェクト間の距離</label><br>
+    <label><input type="range" name="link_strength" min="0.1" max="100" value="1"/> リンク結合の強さ</label><br>
+    <label><input type="checkbox" name="show_texts_near_circles" checked="checked"/> モジュール名の表示</label><br>
+    <input id="search_input" placeholder="モジュール名フィルタ" style="width:100%;"><br>
+  </form>
+
+  <div id="chart">
+    <!-- Here the SVG will be placed-->
+  </div>
+
+<script src="dependencyParser.js"></script>
+<script src="d3Renderer.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var parser   = new DependencyParser(dependencies);
+        var renderer = new D3Renderer(
+            d3.select('#chart'),
+            parser.parse()
+        );
+
+        renderer.render();
+    });
+</script>
