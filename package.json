@@ -1,0 +1,25 @@
+{
+  "name": "js-dependency-visualizer",
+  "version": "0.1.0",
+  "description": "JavaScript Module Dependency Visualizer",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ysugimoto/js-dependency-visualizer.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Dependency"
+  ],
+  "author": "Yoshiaki Sugimoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ysugimoto/js-dependency-visualizer/issues"
+  }
+}
