@@ -39,7 +39,7 @@ Open `visual.html` on your browser (need to support SVG support).
 
 This is generated visual from example project ( example/ bundled )
 
-[https://s3-ap-northeast-1.amazonaws.com/sugimoto/visualize-shot.png]
+https://s3-ap-northeast-1.amazonaws.com/sugimoto/visualize-shot.png
 
 ### Thanks
 
