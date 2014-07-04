@@ -49,5 +49,5 @@ https://github.com/PaulTaykalo/objc-dependency-visualizer
 
 ### LICENSE
 
-MIT Lisence.
+MIT License.
 
