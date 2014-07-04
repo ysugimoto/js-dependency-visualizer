@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var path       = require('path');
+var libPath    = path.resolve(__dirname, '../lib');
+var args       = require(libPath + '/argv').parse();
+var Visualizer = require(libPath + '/js-dependency-visualizer');
+
+if ( args.get('help') ) {
+    console.log('JavaScript Module Dependency Visualizer');
+    console.log('===========================================================================');
+    console.log('Usage: js-dependency-visualizer [arguments]');
+    console.log('');
+    console.log('arguments:');
+    console.log('  -d, --dest    output destiation path. default value is current path with "visualize" directory.');
+    console.log('  -s, --src     analyze source path. default value is current pathr.');
+    console.log('  -v, --verbose verbose processing log.');
+    process.exit();
+}
+var analyzer = new Visualizer({
+    srcPath:  args.get('src')  || process.cwd(),
+    destPath: args.get('dest') || process.cwd() + '/visualize'
+});
+
+analyzer.analyze();
+
