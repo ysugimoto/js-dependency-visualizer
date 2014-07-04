@@ -15,6 +15,31 @@ npm install [-g] js-dependency-visualizer
 
 if installed global, you can use `js-dependency-visualizer` command.
 
+### Dependency signature
+
+This program analyze `@depend [module-name]` annotation in module file.
+like this:
+
+```
+//@depend Bar.js
+
+/**
+ * Example class Foo
+ *
+ * @class Foo
+ */
+function Foo() {
+    this.message = 'foo';
+}
+
+Foo.prototype.echo = function() {
+    console.log(this.message);
+};
+```
+
+In this case, this module depends `Bar` module file.
+And, `@class [class-name]` annotation exists, use this name at module-name.
+
 ### Usage
 
 please show help below:
@@ -24,7 +49,7 @@ js-dependency-visualizer -h
 >>>
 JavaScript Module Dependency Visualizer
 ===========================================================================
-Usage: js-dependency-visualizer [arguments]
+Usage js-dependency-visualizer [arguments]
 
 arguments:
   -d, --dest    output destiation path. default value is current path with "visualize" directory.
