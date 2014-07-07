@@ -1,1 +1,1 @@
-require('./lib/js-dependency-visualizer');
+module.exports = require('./lib/js-dependency-visualizer');
