@@ -1,6 +1,6 @@
 {
   "name": "js-dependency-visualizer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "JavaScript Module Dependency Visualizer",
   "main": "index.js",
   "bin": "bin/js-dependency-visualizer",

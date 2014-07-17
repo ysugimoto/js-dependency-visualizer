@@ -125,7 +125,7 @@
          * @property color
          * @type Object
          */
-        this.color = d3.scale.category10();
+        this.color = d3.scale.category20();
 
         /**
          * selected index
