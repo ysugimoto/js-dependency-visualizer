@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 var path       = require('path');
+var fs         = require('fs');
 var libPath    = path.resolve(__dirname, '../lib');
+var assetPath  = path.resolve(__dirname, '../asset');
 var args       = require(libPath + '/argv').parse();
 var Visualizer = require(libPath + '/js-dependency-visualizer');
 
@@ -16,10 +18,18 @@ if ( args.get('help') ) {
     console.log('  -v, --verbose verbose processing log.');
     process.exit();
 }
-var analyzer = new Visualizer({
-    srcPath:  args.get('src')  || process.cwd(),
-    destPath: args.get('dest') || process.cwd() + '/visualize'
+var analyzer     = Visualizer.makeFromPath(args.get('src')  || process.cwd());
+var destPath     = args.get('dest') || process.cwd() + '/visualize';
+var dependencies = analyzer.analyze().result();
+
+// create directory if not exists
+if ( ! fs.existsSync(destPath) ) {
+    fs.mkdirSync(destPath);
+}
+
+// copy assets
+fs.readdirSync(assetPath).forEach(function(asset) {
+    var buffer = fs.readFileSync(path.resolve(assetPath, asset));
+
+    fs.writeFileSync(destPath + '/' + asset, buffer, {encoding: 'utf8'});
 });
-
-analyzer.analyze();
-
