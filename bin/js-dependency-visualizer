@@ -33,8 +33,4 @@ destPath = destPath.replace('/\/$/', '') + '/';
 fs.writeFileSync(destPath + 'dependencyData.js', dependencies, { encoding: 'utf8' });
 
 // copy assets
-fs.readdirSync(assetPath).forEach(function(asset) {
-    var buffer = fs.readFileSync(path.resolve(assetPath, asset));
-
-    fs.writeFileSync(destPath + '/' + asset, buffer, {encoding: 'utf8'});
-});
+analyzer.copyAssets(destPath);
