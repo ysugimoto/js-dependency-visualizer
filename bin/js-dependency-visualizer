@@ -27,6 +27,11 @@ if ( ! fs.existsSync(destPath) ) {
     fs.mkdirSync(destPath);
 }
 
+destPath = destPath.replace('/\/$/', '') + '/';
+
+// write file
+fs.writeFileSync(destPath + 'dependencyData.js', dependencies, { encoding: 'utf8' });
+
 // copy assets
 fs.readdirSync(assetPath).forEach(function(asset) {
     var buffer = fs.readFileSync(path.resolve(assetPath, asset));
