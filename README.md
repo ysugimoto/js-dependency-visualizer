@@ -53,18 +53,24 @@ Usage js-dependency-visualizer [arguments]
 
 arguments:
   -d, --dest    output destiation path. default value is current path with "visualize" directory.
-  -s, --src     analyze source path. default value is current pathr.
+  -s, --src     analyze source path. default value is current path.
   -v, --verbose verbose processing log.
 ```
 
 After command execution, program will create `visualize` directory.
 Open `visual.html` on your browser (need to support SVG support).
 
-### Screen shot
+### Example
+
+Analyze from `example` directory sources:
+
+```
+$ js-dependecy-visualizer --src=example
+```
 
 This is generated visual from example project ( example/ bundled )
 
-https://s3-ap-northeast-1.amazonaws.com/sugimoto/visualize-shot.png
+http://blog.wnotes.net/source/visualize/visual.html
 
 ### Thanks
 

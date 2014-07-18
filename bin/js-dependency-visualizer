@@ -14,7 +14,7 @@ if ( args.get('help') ) {
     console.log('');
     console.log('arguments:');
     console.log('  -d, --dest    output destiation path. default value is current path with "visualize" directory.');
-    console.log('  -s, --src     analyze source path. default value is current pathr.');
+    console.log('  -s, --src     analyze source path. default value is current path.');
     console.log('  -v, --verbose verbose processing log.');
     process.exit();
 }
